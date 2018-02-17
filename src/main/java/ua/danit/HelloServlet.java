@@ -28,13 +28,15 @@ class HelloServlet extends HttpServlet {
     String posting = req.getParameter("button");
     User user = switcher.showLikedUsersById();
 
-    if(posting.equals("Yes")){
+    if("Yes".equals(posting)){
       UserDao.usersLiked.add(user);
-    }else if(posting.equals("No")) {
+      resp.sendRedirect("/");
+    }else if("No".equals(posting)) {
       UserDao.usersDisliked.add(user);
+      resp.sendRedirect("/");
     }
 
-    resp.sendRedirect("/");
+
   }
 
 }

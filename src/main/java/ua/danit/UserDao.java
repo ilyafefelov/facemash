@@ -33,6 +33,6 @@ public class UserDao {
                 return e;
             }
         }
-        return usersLiked.iterator().next();
+        return null;
     }
 }
