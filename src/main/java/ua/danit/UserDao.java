@@ -7,7 +7,8 @@ import java.util.Set;
 public class UserDao {
 
     public static HashMap<Integer, User> userList = new HashMap<Integer, User>();
-    public static Set<User> usersAdded = new HashSet<>();
+    public static Set<User> usersLiked = new HashSet<>();
+    public static Set<User> usersDisliked = new HashSet<>();
 
     {
         userList.put(1, new User(1, "Cat-Dog", "https://img.buzzfeed.com/buzzfeed-static/static/2017-07/6/15/asset/buzzfeed-prod-fastlane-03/sub-buzz-25189-1499368792-6.jpg?downsize=715:*&output-format=auto&output-quality=auto"));
@@ -19,19 +20,19 @@ public class UserDao {
     }
 
     public void addLikedUsersById(Integer id){
-        usersAdded.add(userList.get(id));
+        usersLiked.add(userList.get(id));
     }
 
     public Set<User> likedUsers() {
-        return usersAdded;
+        return usersLiked;
     }
 
     public User showLikedUsersById() {
         for(User e : userList.values()){
-            if(!usersAdded.contains(e)){
+            if(!usersLiked.contains(e) && !usersDisliked.contains(e)){
                 return e;
             }
         }
-        return usersAdded.iterator().next();
+        return usersLiked.iterator().next();
     }
 }

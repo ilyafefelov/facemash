@@ -41,9 +41,8 @@ class HelloServlet extends HttpServlet {
     writer.write("<img src='"+url+"'>");
     writer.write("<p>"+ name +"</p>");
     writer.write("<form action='/' method=\"post\">");
-    writer.write("<button type='submit'>Yes</button>");
-    writer.write(" <button>No</button>\n");
-    writer.write("<input type=\"hidden\" name='id' value="+id+">");
+    writer.write  ("<button type='submit' name='btn' value='Yes'>Yes</button>");
+    writer.write(" <button name='btn' value='No'>No</button>\n");
     writer.write(" </form>\n" +
             "</div>\n" +
             "\n" +
@@ -56,8 +55,15 @@ class HelloServlet extends HttpServlet {
 
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    String post = req.getParameter("id");
-    switcher.addLikedUsersById(Integer.valueOf(post));
-    resp.sendRedirect("/*");
+    String posting = req.getParameter("btn");
+    User user = switcher.showLikedUsersById();
+
+    if(posting.equals("Yes")){
+      UserDao.usersLiked.add(user);
+    }else if(posting.equals("No")) {
+      UserDao.usersDisliked.add(user);
+    }
+    resp.sendRedirect("/");
   }
+
 }
