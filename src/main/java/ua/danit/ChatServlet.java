@@ -17,7 +17,6 @@ public class ChatServlet extends HelloServlet{
     for(User user : switcher.likedUsers()) {
       writer.write("<form action='/' method=\"post\">");
       writer.write("<p><img src='"+user.imgUrl+"' width= 100px height= 100px></p>");
-      writer.write  ("<button type='submit' onClick=localhost:8080/chat>"+user.name+"</button>");
     }
     writer.write("</body></html>");
   }

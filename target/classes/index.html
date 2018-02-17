@@ -4,7 +4,7 @@
         <meta charset=\"UTF-8\">
         <title>Title</title>
         <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">
-        <link rel=\"stylesheet\" type=\"text/css\" href=\"/styles.css\">
+        <!--<link rel=\"stylesheet\" type=\"text/css\" href=\"/styles.css\">-->
     <style>
        img{
             width: 300px;
@@ -13,11 +13,11 @@
     </style>
     </head>
 <body>
-<div class=\"container\">
-   <div class=\"row\">
-        <img src='"+imgUrl+"'>
-        <p>+ name +</p>
-        <form action='/' method=\"post\">
+<div class="container">
+   <div class="row">
+        <img src="${imgUrl}">
+        <p>${name}</p>
+        <form action='/' method="POST">
             <button type='submit' name='button' value='Yes'>Yes</button>
             <button name='button' value='No'>No</button>
             </form>
