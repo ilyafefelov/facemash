@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class UserDao {
 
-    public static HashMap<Integer, User> userList = new HashMap<Integer, User>();
+    public static HashMap<Integer, User> userList = new HashMap<>();
     public static Set<User> usersLiked = new HashSet<>();
     public static Set<User> usersDisliked = new HashSet<>();
 

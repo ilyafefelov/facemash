@@ -15,7 +15,7 @@ class HelloServlet extends HttpServlet {
     User user = switcher.showLikedUsersById();
 
     String name = user.name;
-    String url = user.imgUrl;
+    String imgUrl = user.imgUrl;
     int id = user.id;
     PrintWriter writer = resp.getWriter();
 
@@ -38,11 +38,11 @@ class HelloServlet extends HttpServlet {
             "<div class=\"container\">\n" +
             "\n" +
             "<div class=\"row\">");
-    writer.write("<img src='"+url+"'>");
+    writer.write("<img src='"+imgUrl+"'>");
     writer.write("<p>"+ name +"</p>");
     writer.write("<form action='/' method=\"post\">");
-    writer.write  ("<button type='submit' name='btn' value='Yes'>Yes</button>");
-    writer.write(" <button name='btn' value='No'>No</button>\n");
+    writer.write  ("<button type='submit' name='button' value='Yes'>Yes</button>");
+    writer.write(" <button name='button' value='No'>No</button>\n");
     writer.write(" </form>\n" +
             "</div>\n" +
             "\n" +
@@ -55,7 +55,7 @@ class HelloServlet extends HttpServlet {
 
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    String posting = req.getParameter("btn");
+    String posting = req.getParameter("button");
     User user = switcher.showLikedUsersById();
 
     if(posting.equals("Yes")){
@@ -63,6 +63,7 @@ class HelloServlet extends HttpServlet {
     }else if(posting.equals("No")) {
       UserDao.usersDisliked.add(user);
     }
+
     resp.sendRedirect("/");
   }
 
