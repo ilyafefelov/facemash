@@ -12,11 +12,11 @@ public class App {
         ServletHolder holder = new ServletHolder(new HelloServlet());
         handler.addServlet(holder, "/*");
 
-        ServletHolder liked = new ServletHolder(new ServletWithLikedPeople());
+        ServletHolder liked = new ServletHolder(new LikedPeopleServlet());
         handler.addServlet(liked, "/liked");
 
-//        ServletHolder chat = new ServletHolder(new ChatServlet());
-//        handler.addServlet(chat, "/*");
+        ServletHolder chat = new ServletHolder(new ChatServlet());
+        handler.addServlet(chat, "/chat");
 
         server.setHandler(handler);
         server.start();

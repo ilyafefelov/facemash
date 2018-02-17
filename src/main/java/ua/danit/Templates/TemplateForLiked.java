@@ -1,4 +1,4 @@
-package ua.danit;
+package ua.danit.Templates;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -11,11 +11,11 @@ import java.net.URL;
 
 import static freemarker.template.Configuration.VERSION_2_3_21;
 
-public class TemplateWriteFile {
+public class TemplateForLiked {
 
   public static void write(Writer out, Object user) throws IOException {
     try {
-      getTemplate("index.html").process(user, out);
+      getTemplate("LikedPeople.html").process(user, out);
     } catch (TemplateException e) {
       throw new RuntimeException(e);
     }

@@ -1,5 +1,7 @@
 package ua.danit;
 
+import ua.danit.Templates.TemplateWriteFile;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +16,12 @@ public class ChatServlet extends HelloServlet{
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+//    User thisUser = switcher.searchUserForChatting();
+//
+//    TemplateWriteFile.write(resp.getWriter(), thisUser);
+
     resp.getWriter().write("HI");
+
   }
 
   @Override
