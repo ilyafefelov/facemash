@@ -1,6 +1,6 @@
 package ua.danit.Servlets;
 
-import ua.danit.Templates.TemplateWriteFile;
+import ua.danit.Template.TemplateWriteFile;
 import ua.danit.User;
 import ua.danit.UserDao;
 
@@ -17,20 +17,20 @@ public class HelloServlet extends HttpServlet {
 
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    User thisUser = switcher.showLikedUsersById();
+    User thisUser = switcher.showLikedUsers();
 
     if(thisUser == null){
       resp.sendRedirect("/liked");
       return;
     }
 
-    TemplateWriteFile.write(resp.getWriter(), thisUser);
+    TemplateWriteFile.write("index.html", resp.getWriter(), thisUser);
   }
 
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     String posting = req.getParameter("button");
-    User user = switcher.showLikedUsersById();
+    User user = switcher.showLikedUsers();
 
     if("Yes".equals(posting)){
       UserDao.usersLiked.add(user);
@@ -39,8 +39,6 @@ public class HelloServlet extends HttpServlet {
       UserDao.usersDisliked.add(user);
       resp.sendRedirect("/");
     }
-
-
   }
 
 }

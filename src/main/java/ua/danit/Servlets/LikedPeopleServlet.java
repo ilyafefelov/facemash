@@ -2,7 +2,7 @@ package ua.danit.Servlets;
 
 
 import com.google.common.collect.ImmutableMap;
-import ua.danit.Templates.TemplateForLiked;
+import ua.danit.Template.TemplateWriteFile;
 import ua.danit.User;
 import ua.danit.UserDao;
 
@@ -21,12 +21,14 @@ public class LikedPeopleServlet extends HelloServlet {
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     Set<User> users = switcher.likedUsers();
 
-      TemplateForLiked.write(resp.getWriter(), ImmutableMap.of("users", users, "Man", users.iterator().next()));
+      TemplateWriteFile.write("LikedPeople.html", resp.getWriter(), ImmutableMap.of("users", users, "Man", users.iterator().next()));
 
   }
 
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+      String name = req.getParameter("chatter");
+      UserDao.chatBox = name;
       resp.sendRedirect("/chat");
 
   }
