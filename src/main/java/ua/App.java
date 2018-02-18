@@ -1,8 +1,11 @@
-package ua.danit;
+package ua;
 
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
+import ua.danit.Servlets.ChatServlet;
+import ua.danit.Servlets.HelloServlet;
+import ua.danit.Servlets.LikedPeopleServlet;
 
 public class App {
 

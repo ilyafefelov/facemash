@@ -1,6 +1,8 @@
-package ua.danit;
+package ua.danit.Servlets;
 
 import ua.danit.Templates.TemplateWriteFile;
+import ua.danit.User;
+import ua.danit.UserDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(loadOnStartup = 1, urlPatterns = "/*")
-class HelloServlet extends HttpServlet {
+public class HelloServlet extends HttpServlet {
   UserDao switcher = new UserDao();
 
   @Override

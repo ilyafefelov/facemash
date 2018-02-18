@@ -1,8 +1,10 @@
-package ua.danit;
+package ua.danit.Servlets;
 
 
 import com.google.common.collect.ImmutableMap;
 import ua.danit.Templates.TemplateForLiked;
+import ua.danit.User;
+import ua.danit.UserDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
