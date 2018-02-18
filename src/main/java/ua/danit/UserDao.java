@@ -37,9 +37,9 @@ public class UserDao {
         return null;
     }
 
-    public User searchUserForChatting(){
+    public static User searchUserForChatting(Set<User> usersLiked){
         for(User user : usersLiked){
-            if(user.toString().contains(chatBox)){
+            if(user.name.contains(chatBox)){
                 return user;
             }
         }

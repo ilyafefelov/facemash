@@ -1,5 +1,6 @@
 package ua.danit;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class User {
@@ -7,6 +8,15 @@ public class User {
     public int id;
     public String name;
     public String imgUrl;
+    public ArrayList<String> messages;
+
+    public ArrayList<String> getMessages() {
+        return messages;
+    }
+
+    public User(ArrayList<String> messages) {
+        this.messages = messages;
+    }
 
     public User(int id, String name, String imgUrl) {
         this.id = id;
