@@ -1,6 +1,6 @@
 package ua.danit.Servlets;
 
-import ua.danit.Template.TemplateWriteFile;
+import ua.danit.Template.Template;
 import ua.danit.User;
 import ua.danit.UserDao;
 
@@ -24,7 +24,7 @@ public class HelloServlet extends HttpServlet {
       return;
     }
 
-    TemplateWriteFile.write("index.html", resp.getWriter(), thisUser);
+    Template.write("index.html", resp.getWriter(), thisUser);
   }
 
   @Override

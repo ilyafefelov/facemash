@@ -69,20 +69,21 @@
     <!--<span class="time-left">11:01</span>-->
 <!--</div>-->
 
-<div class="girls">
+<div class="container">
     <img src="${user.imgUrl}" alt="pic" class="img.right" height="50px" width="50px">
     <p><b>${user.name}: </b>Greetings My Lord</p>
 </div>
 
-<#list user.messages as item>
-    <div class="container">
+<#list message as item>
+    <div class="chatter">
         <p><b>You: </b>${item}</p>
     </div>
 </#list>
 
 <div class="row col fixed-bottom pos">
     <form action="/chat" method="POST" class="container">
-        <input type="text" name="message" class="form-control wd" placeholder="Type a message" style="width: 400px; height: 50px;"><br />
+        <input type="text" name="message" class="form-control wd" placeholder="Type a message" style="width: 400px; height: 25px;">
+        <button>Send</button><br />
     </form>
 </div>
 

@@ -1,6 +1,8 @@
 package ua.danit;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
 
 public class User {
@@ -8,14 +10,14 @@ public class User {
     public int id;
     public String name;
     public String imgUrl;
-    public ArrayList<String> messages;
+    public List<String> messages;
 
-    public ArrayList<String> getMessages() {
-        return messages;
+    public User(List<String> messages) {
+        this.messages = messages;
     }
 
-    public User(ArrayList<String> messages) {
-        this.messages = messages;
+    public List<String> getMessages() {
+        return messages;
     }
 
     public User(int id, String name, String imgUrl) {

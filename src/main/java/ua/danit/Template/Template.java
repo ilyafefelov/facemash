@@ -1,7 +1,6 @@
 package ua.danit.Template;
 
 import freemarker.template.Configuration;
-import freemarker.template.Template;
 import freemarker.template.TemplateException;
 
 import java.io.File;
@@ -11,7 +10,7 @@ import java.net.URL;
 
 import static freemarker.template.Configuration.VERSION_2_3_21;
 
-public class  TemplateWriteFile {
+public class Template {
 
   public static void write(String tmp, Writer out, Object user) throws IOException {
     try {
@@ -20,9 +19,9 @@ public class  TemplateWriteFile {
       throw new RuntimeException(e);
     }
   }
-  public static Template getTemplate(String name) throws IOException {
+  public static freemarker.template.Template getTemplate(String name) throws IOException {
     Configuration config = new Configuration(VERSION_2_3_21);
-    URL resource = TemplateWriteFile.class.getClassLoader().getResource(".");
+    URL resource = Template.class.getClassLoader().getResource(".");
     String path = resource.getPath();
     config.setDirectoryForTemplateLoading(new File(path));
     return config.getTemplate(name);

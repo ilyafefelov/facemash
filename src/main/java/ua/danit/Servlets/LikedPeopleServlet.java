@@ -2,7 +2,7 @@ package ua.danit.Servlets;
 
 
 import com.google.common.collect.ImmutableMap;
-import ua.danit.Template.TemplateWriteFile;
+import ua.danit.Template.Template;
 import ua.danit.User;
 import ua.danit.UserDao;
 
@@ -15,13 +15,12 @@ import java.util.Set;
 
 @WebServlet(urlPatterns = "/liked")
 public class LikedPeopleServlet extends HelloServlet {
-  UserDao switcher = new UserDao();
-
+    Set<User> users = UserDao.usersLiked;
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    Set<User> users = switcher.likedUsers();
 
-      TemplateWriteFile.write("LikedPeople.html", resp.getWriter(), ImmutableMap.of("users", users, "Man", users.iterator().next()));
+
+      Template.write("LikedPeople.html", resp.getWriter(), ImmutableMap.of("users", users, "Man", users.iterator().next()));
 
   }
 
