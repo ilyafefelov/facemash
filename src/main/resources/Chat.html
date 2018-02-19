@@ -74,16 +74,16 @@
     <p><b>${user.name}: </b>Greetings My Lord</p>
 </div>
 
-<#list message as item>
+<#list user.messages as item>
     <div class="chatter">
         <p><b>You: </b>${item}</p>
     </div>
 </#list>
 
 <div class="row col fixed-bottom pos">
-    <form action="/chat" method="POST" class="container">
-        <input type="text" name="message" class="form-control wd" placeholder="Type a message" style="width: 400px; height: 25px;">
-        <button>Send</button><br />
+    <form action="/chat" method="POST" class="form-inline">
+        <input type="text" name="message" class="form-control wd" placeholder="Type a message" style="width: 400px; height: 25px;"></br>
+        <!--<button type="submit" name="button" value="button"> Send </button><br/>-->
     </form>
 </div>
 

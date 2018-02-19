@@ -28,6 +28,8 @@ public class ChatServlet extends HelloServlet{
 
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//    String posting = req.getParameter("button");
+
     User chatter = UserDao.searchUserForChatting(UserDao.usersLiked);
 
     String message = req.getParameter("message");

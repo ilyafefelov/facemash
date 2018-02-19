@@ -3,8 +3,6 @@
 <head>
     <style>
         .container {
-            border: 2px solid #dedede;
-            background-color: #f1f1f1;
             border-radius: 5px;
             padding: 10px;
             margin: 10px 0;
@@ -16,8 +14,10 @@
 <#list users as user>
     <div class="container">
         <form action='/liked' method="POST">
+            <center>
             <p><img src="${user.imgUrl}" width= 100px height= 100px></p>
             <button type="submit" name="chatter" value="${user.name}">${user.name}</button>
+            </center>
         </form>
     </div>
 </#list>
