@@ -10,17 +10,25 @@
             width: 300px;
             height: 300px;
         }
+       .container {
+           background-color: #f1f1f1;
+           border-radius: 5px;
+           padding: 10px;
+           margin: 10px 0;
+       }
     </style>
     </head>
 <body>
 <div class="container">
    <div class="row">
+       <center>
         <img src="${imgUrl}">
         <p>${name}</p>
         <form action='/' method="POST">
             <button type='submit' name='button' value='Yes'>Yes</button>
             <button type = 'submit' name='button' value='No'>No</button>
             </form>
+       </center>
         </div>
     </div>
 </div>
