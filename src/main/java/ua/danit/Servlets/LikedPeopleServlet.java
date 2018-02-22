@@ -4,7 +4,7 @@ package ua.danit.Servlets;
 import com.google.common.collect.ImmutableMap;
 import ua.danit.Template.Template;
 import ua.danit.User;
-import ua.danit.UserDao;
+import ua.danit.Dao.UserDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.Set;
 
 @WebServlet(urlPatterns = "/liked")
-public class LikedPeopleServlet extends HelloServlet {
+public class LikedPeopleServlet extends ChoiceServlet {
     Set<User> users = UserDao.usersLiked;
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

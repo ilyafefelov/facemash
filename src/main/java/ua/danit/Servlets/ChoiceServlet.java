@@ -2,7 +2,7 @@ package ua.danit.Servlets;
 
 import ua.danit.Template.Template;
 import ua.danit.User;
-import ua.danit.UserDao;
+import ua.danit.Dao.UserDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(loadOnStartup = 1, urlPatterns = "/*")
-public class HelloServlet extends HttpServlet {
+@WebServlet(urlPatterns = "/choice")
+public class ChoiceServlet extends HttpServlet {
   UserDao switcher = new UserDao();
 
   @Override
@@ -24,7 +24,7 @@ public class HelloServlet extends HttpServlet {
       return;
     }
 
-    Template.write("index.html", resp.getWriter(), thisUser);
+    Template.write("hello.html", resp.getWriter(), thisUser);
   }
 
   @Override
@@ -34,10 +34,10 @@ public class HelloServlet extends HttpServlet {
 
     if("Yes".equals(posting)){
       UserDao.usersLiked.add(user);
-      resp.sendRedirect("/");
+      resp.sendRedirect("/choice");
     }else if("No".equals(posting)) {
       UserDao.usersDisliked.add(user);
-      resp.sendRedirect("/");
+      resp.sendRedirect("/choice");
     }
   }
 

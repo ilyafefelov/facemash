@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import ua.danit.Template.Template;
 import ua.danit.User;
-import ua.danit.UserDao;
+import ua.danit.Dao.UserDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 @WebServlet(urlPatterns = "/chat")
-public class ChatServlet extends HelloServlet{
+public class ChatServlet extends ChoiceServlet {
 
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
