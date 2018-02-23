@@ -13,10 +13,15 @@ import ua.danit.Servlets.LikedPeopleServlet;
 import ua.danit.Servlets.LoginServlet;
 
 import javax.servlet.DispatcherType;
+import java.io.IOException;
+import java.net.ServerSocket;
 
 public class App {
 
     public static void main(String[] args) throws Exception {
+
+
+//        ///////////////////////////////////////////////////
         Server server = new Server(8080);
         ServletContextHandler handler = new ServletContextHandler();
 
@@ -41,6 +46,19 @@ public class App {
 
         server.setHandler(handler);
         server.start();
+//////////////////////////////////////////
+        int portNumber = 4444;
+        ServerSocket serverSocket;
+        serverSocket = null;
+        try {
+            serverSocket = new ServerSocket(portNumber);
+        } catch (IOException e) {
+            System.err.println("could not listen on port: " + portNumber);
+            System.exit(1);
+        }
+
+
+//        ///////////////////////
         server.join();
     }
 

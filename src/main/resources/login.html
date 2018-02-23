@@ -1,19 +1,97 @@
 <!doctype html>
+<!--suppress ALL -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="height=784px, width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
+
+    <style>
+        body {
+            background: linear-gradient(to right bottom, #370529, #450c33, #54133d, #641a48, #742252);
+            width: 98vw;
+            height: 100vh;
+
+        }
+
+        #loginbox_top-text {
+            line-height: 23px;
+            margin-bottom: 43px;
+        }
+
+        input {
+            right: 8%;
+            position: absolute;
+            background: #e3cbf9 !important;
+            width: 55%;
+            border-radius: 4px;
+            border: solid 1px lightgrey;
+            margin-top: 14px;
+        }
+
+        #loginbox {
+            display: inherit;
+            min-height: 200px;
+            width: 30vw;
+            background: #E0E0E0;
+            border-radius: 8px;
+            box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.36);
+            position: relative;
+            left: 32vw;
+            min-width: 270px;
+            padding: 25px;
+            /*display: -webkit-box;*/
+            font-family: monospace;
+            line-height: 47px;
+            font-size: 16px;
+            letter-spacing: 0.2px;
+            -webkit-box-align: baseline;
+            align-items: center;
+            /*padding-top: 100px;*/
+            margin-top: 20vh;
+        }
+
+        #login_button {
+            padding: 3px 3px 7px 3px;
+            width: -webkit-fill-available;
+            background-color: #607D8B;
+            border: solid grey 1px;
+            border-radius: 3px;
+            font-family: monospace;
+            font-style: oblique;
+            font-size: 21px;
+            font-variant-caps: all-small-caps;
+            font-weight: 600;
+            color: #212121;
+        }
+
+
+        #login_button:hover {
+                color:#607D8B;
+                background: #212121;
+        }
+    </style>
 </head>
+
 <body>
+<div id="loginbox">
+    <div id="loginbox_top-text">
+        <h2>Please login</h2><br>
+        <div style="color: #433c49">
+            <span>login<b> Cat</b>     pass<b> Dog</b></span><br>
+            <span>for demo</span><br>
+        </div>
+    </div>
     <form action = '/login' method = 'POST'>
         <label>User Name</label>
         <input name='userName' type='text'><br>
         <label>Password</label>
         <input name = 'password' type = 'password'><br>
-        <button type = 'submit'>Login</button>
+        <button id="login_button" type = 'submit'>Login</button>
     </form>
+</div>
+
 </body>
 </html>

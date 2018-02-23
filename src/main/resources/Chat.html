@@ -25,15 +25,15 @@
         .container::after {
             content: "";
             clear: both;
-            display: table;
+            /*display: table;*/
         }
 
         .container img {
-            float: left;
-            max-width: 60px;
-            width: 100%;
-            margin-right: 20px;
-            border-radius: 50%;
+            /*float: left;*/
+            /*max-width: 60px;*/
+            /*width: 100%;*/
+            /*margin-right: 20px;*/
+            /*border-radius: 50%;*/
         }
 
         .container img.right {
@@ -52,10 +52,141 @@
             color: #999;
         }
     </style>
+    <!--suppress CssInvalidPropertyValue -->
+    <style>
+        img{
+            width: 300px;
+            height: 300px;
+        }
+        .container {
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        body {
+            background-image: linear-gradient(to right top, #638cc9, #7d6c9a, #75556b, #5b4448, #393534);
+            width: 98vw;
+            height: 100vh;
+            font-family: monospace;
+        }
+
+        input {
+            /* right: 13%; */
+            position: absolute;
+            /* background: #e3cbf9 !important; */
+            width: 55%;
+            border-radius: 4px;
+            border: solid 1px lightgrey;
+            margin-top: 14px;
+            height: 50px;
+            padding: 16px;
+            margin-left: 106px;
+            width: -webkit-fill-available;
+
+            max-width: 60.8%;
+            letter-spacing: 2px;
+            background: #FAFAFA;
+            /* border-right: 0px solid gray; */
+        }
+
+        .container {
+            display: inherit;
+            background: #E0E0E0;
+            border-radius: 8px;
+            box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.36);
+            position: relative;
+            padding: 25px;
+            font-family: monospace;
+            font-size: 16px;
+            letter-spacing: 0.2px;
+            -webkit-box-align: baseline;
+            align-items: center;
+
+            margin-top: 5vh;
+            height: 47px;
+
+        }
+
+        img {
+            float: left;
+            max-width: 60px;
+            width: 100%;
+            margin-right: 20px;
+            border-radius: 50%;
+            max-height: 60px;
+            width: auto;
+            top: -7px;
+            left: -7px;
+            position: relative;
+        }
+
+        button {
+            padding: 3px 3px 7px 3px;
+            width: -webkit-fill-available;
+            background-color: #607D8B;
+            border: solid grey 1px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-style: oblique;
+            font-size: 21px;
+            font-variant-caps: all-small-caps;
+            font-weight: 600;
+            color: #212121;
+        }
+        button[value="Yes"] {
+            background-color: #27cdb7;
+        }
+        button:hover[value="Yes"] {
+            color: #12ffbd;
+        }
+        button[value="No"] {
+            background-color: rgba(100, 25, 8, 0.7);
+        }
+        button:hover[value="No"] {
+            color: #641908;
+        }
+
+
+        button:hover {
+            color:#607D8B;
+            background: #212121;
+        }
+
+        #chat-container {
+            border-radius: 5px;
+        }
+        .chatter:before:first-of-type {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        #chat-container:last-child {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        .chatter {
+            background: #f5f5f5a1;
+            font-family: monospace;
+            font-size: 14px;
+            padding: 6px 6px 6px 106px;
+            letter-spacing: 0.2px;
+
+            /*border: solid 1px whitesmoke;*/
+            margin: 1px;
+        }
+
+
+        .section_title {
+            padding-top: 9%;
+            color: beige;
+            text-shadow: 0px 2px 1px #00000087;
+        }
+
+    </style>
 </head>
 <body>
 
-<h2>Chat Messages</h2>
+<h2 class="section_title">Chat Messages</h2>
 
 <!--<div class="liked">-->
     <!--<img src="${user.imgUrl}" alt="Avatar" style="width:100%;">-->
@@ -73,16 +204,16 @@
     <img src="${user.imgUrl}" alt="pic" class="img.right" height="50px" width="50px">
     <p><b>${user.name}: </b>Greetings My Lord</p>
 </div>
-
-<#list user.messages as item>
+<div id="chat-container">
+    <#list user.messages as item>
     <div class="chatter">
         <p><b>You: </b>${item}</p>
     </div>
-</#list>
-
+    </#list>
+</div>
 <div class="row col fixed-bottom pos">
     <form action="/chat" method="POST" class="form-inline">
-        <input type="text" name="message" class="form-control wd" placeholder="Type a message" style="width: 400px; height: 25px;"></br>
+        <input type="text" name="message" class="form-control wd" placeholder="Type a message"></br>
         <!--<button type="submit" name="button" value="button"> Send </button><br/>-->
     </form>
 </div>

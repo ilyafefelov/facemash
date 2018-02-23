@@ -16,7 +16,80 @@
            padding: 10px;
            margin: 10px 0;
        }
+        body {
+            background: linear-gradient(to right bottom, #370529, #450c33, #54133d, #641a48, #742252);
+            width: 98vw;
+            height: 100vh;
+
+        }
+
+
+
+       input {
+           right: 8%;
+           position: absolute;
+           background: #e3cbf9 !important;
+           width: 55%;
+           border-radius: 4px;
+           border: solid 1px lightgrey;
+           margin-top: 14px;
+       }
+
+       .container {
+           display: inherit;
+           min-height: 200px;
+           width: 30vw;
+           background: #E0E0E0;
+           border-radius: 8px;
+           box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.36);
+           position: relative;
+           left: 32vw;
+           min-width: 270px;
+           padding: 25px;
+           /*display: -webkit-box;*/
+           font-family: monospace;
+           line-height: 47px;
+           font-size: 16px;
+           letter-spacing: 0.2px;
+           -webkit-box-align: baseline;
+           align-items: center;
+           /*padding-top: 100px;*/
+           margin-top: 20vh;
+       }
+
+       button {
+           padding: 3px 3px 7px 3px;
+           width: -webkit-fill-available;
+           background-color: #607D8B;
+           border: solid grey 1px;
+           border-radius: 5px;
+           font-family: monospace;
+           font-style: oblique;
+           font-size: 21px;
+           font-variant-caps: all-small-caps;
+           font-weight: 600;
+           color: #212121;
+       }
+       button[value="Yes"] {
+           background-color: #27cdb7;
+       }
+       button:hover[value="Yes"] {
+           color: #12ffbd;
+       }
+       button[value="No"] {
+           background-color: rgba(100, 25, 8, 0.7);
+       }
+       button:hover[value="No"] {
+           color: #641908;
+       }
+
+
+       button:hover {
+           color:#607D8B;
+           background: #212121;
+       }
     </style>
+
     </head>
 <body>
 <div class="container">
